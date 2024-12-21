@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://osa5kbntnb0j"]
+
+[ext_resource type="Script" path="res://Game/game.gd" id="1_aylj3"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_aylj3")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
