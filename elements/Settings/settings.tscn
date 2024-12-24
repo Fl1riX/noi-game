@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://xpdv13cnaqkn"]
+[gd_scene load_steps=3 format=3 uid="uid://xpdv13cnaqkn"]
 
 [ext_resource type="Script" path="res://elements/Settings/settings.gd" id="1_cvhvq"]
+[ext_resource type="PackedScene" uid="uid://taouibi8wu7i" path="res://elements/menu/background.tscn" id="2_33wfl"]
 
 [node name="Settings" type="Node2D"]
 script = ExtResource("1_cvhvq")
@@ -33,5 +34,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 20
 text = "Settings"
+
+[node name="Background" parent="." instance=ExtResource("2_33wfl")]
+position = Vector2(120, 153)
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]

@@ -1,12 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://osa5kbntnb0j"]
+[gd_scene load_steps=5 format=3 uid="uid://osa5kbntnb0j"]
 
 [ext_resource type="Script" path="res://Game/game.gd" id="1_aylj3"]
+[ext_resource type="PackedScene" uid="uid://taouibi8wu7i" path="res://elements/menu/background.tscn" id="2_jv0v0"]
+[ext_resource type="PackedScene" uid="uid://0d1yfpws8kv5" path="res://elements/Main_Character/main_character.tscn" id="3_bf5uu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cril"]
+size = Vector2(256, 20)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_aylj3")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Background" parent="." instance=ExtResource("2_jv0v0")]
+position = Vector2(99, 151)
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Main_character" parent="." instance=ExtResource("3_bf5uu")]
+position = Vector2(37, 116)
+scale = Vector2(0.5, 0.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(128, -10)
+shape = SubResource("RectangleShape2D_4cril")
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(128, 250)
+shape = SubResource("RectangleShape2D_4cril")

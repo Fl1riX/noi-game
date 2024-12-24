@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://0d1yfpws8kv5"]
+
+[ext_resource type="Script" path="res://main_character.gd" id="1_jjr53"]
+[ext_resource type="Texture2D" uid="uid://c3xubv0hq6h3i" path="res://assets/main_Character/main_Character1.png" id="1_v4ki8"]
+[ext_resource type="Texture2D" uid="uid://6lcsch3u4wkp" path="res://assets/main_Character/main_Character2.png" id="2_i7j26"]
+[ext_resource type="Texture2D" uid="uid://c8yc4ou8pdfqj" path="res://assets/main_Character/main_Character3.png" id="3_btfsf"]
+[ext_resource type="Texture2D" uid="uid://2lxwgusbao6v" path="res://assets/main_Character/main_Character4.png" id="4_kjqx3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d3an3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v4ki8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i7j26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_btfsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kjqx3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xdvpv"]
+
+[node name="MainCharacter" type="CharacterBody2D"]
+script = ExtResource("1_jjr53")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_d3an3")
+autoplay = "default"
+frame_progress = 0.959117
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+rotation = 1.53698
+scale = Vector2(1.85169, 2.03264)
+shape = SubResource("CapsuleShape2D_xdvpv")

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://da20spqg5cqnt"]
+
+[ext_resource type="Texture2D" uid="uid://d247eveypefxn" path="res://assets/asteroid/ussr1.png" id="1_hfu3q"]
+[ext_resource type="Texture2D" uid="uid://crs12si1y8xpd" path="res://assets/asteroid/ussr2.png" id="2_sx676"]
+[ext_resource type="Texture2D" uid="uid://dv2keptnx2cjx" path="res://assets/asteroid/ussr3.png" id="3_cxrx4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_akxs2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hfu3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sx676")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cxrx4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ufyyt"]
+radius = 13.0
+
+[node name="satellite" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_akxs2")
+autoplay = "default"
+frame_progress = 0.943659
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_ufyyt")
