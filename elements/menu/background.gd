@@ -10,5 +10,4 @@ func _ready() -> void:
 	sprite.texture = load(bgs[randi() % bgs.size()])
 
 func _process(delta: float) -> void:
-	#sprite.texture = load(bgs[randi() % bgs.size()])
 	bg.scroll_base_offset.x += scroll_speed * delta
